@@ -6,15 +6,15 @@ def f_read():
             dish = line.strip()
             ingredients_number = f.readline().strip()
             n = int(ingredients_number)
-            ingredient_dict = {}
             ingredient_dict_list = []
 
             for lines in range(n):
+                ingredient_dict = {}
                 ingredient = f.readline().strip().split(' | ')
                 ingredient_dict['ingredient_name'] = ingredient[0]
                 ingredient_dict['quantity'] = ingredient[1]
                 ingredient_dict['measure'] = ingredient[2]
-                ingredient_dict_list.append(ingredient_dict.copy())
+                ingredient_dict_list.append(ingredient_dict)
 
             cook_book_dict[dish] = ingredient_dict_list
             f.readline()
